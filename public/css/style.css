@@ -1,0 +1,199 @@
+:root {
+  --header-color: #2c2006;
+  --card-bg-color: #f0e8bf;
+  --border-radius: 5px;
+  --card-color-light: #f5f4c9;
+  --button-color: #e5e1b6;
+  --box-shadow: 3px 4px 12px var(--header-color);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--card-color-light);
+  background-size: cover;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+  color: var(--header-color);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.container {
+  max-width: 100%;
+  padding: 16px 16px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.add-border {
+  border: 1px solid #e5e1b6;
+  background-color: var(--header-color);
+  box-shadow: var(--box-shadow);
+  border-radius: 5px;
+}
+
+.header {
+  font-weight: 900;
+  font-size: 60px;
+  text-align: left;
+  color: var(--card-color-light);
+  justify-content: left;
+  background-color: var(--header-color);
+  border-bottom: 1px solid var(--header-color);
+  height: 60px;
+  padding: 0 66px;
+  box-shadow: var(--box-shadow);
+}
+
+.header-link-structure {
+  list-style: none;
+  gap: 33px;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+}
+
+.header-links:link,
+.header-links:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--card-bg-color);
+  font-size: 26px;
+  font-weight: 500;
+  transition: all 0.5s;
+}
+
+.header-links:hover,
+.header-links:active {
+  color: rgb(175, 123, 45);
+}
+
+button,
+button:link,
+button:visited,
+.all-btns,
+.action-button:link,
+.action-button:visited  {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-block;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  padding: 16px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  height: 66px;
+  margin: 32px;
+  font-size: 36px;
+  font-weight: 400;
+  width: 50%;
+  border: 2px solid var(--header-color);
+  color: var(--header-color);
+  background-color: var(--button-color);
+}
+
+button,
+button:hover,
+button:active,
+.action-button:hover,
+.action-button:active {
+  background-color: var(--header-color);
+  color: var(--button-color);
+  box-shadow: inset 0 0 0 3px #e5e1b6;
+  margin: 32px;
+  height: 66px;
+  width: 50%;
+}
+
+.align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-card {
+  justify-content: center;
+  max-width: 700px;
+  margin: auto;
+  margin-top: 32px;
+  overflow: hidden;
+}
+
+.card {
+  background: var(--header-color);
+  color: var(--card-bg-color);
+  padding: 32px;
+  margin-bottom: 32px;
+  box-shadow: var(--box-shadow);
+  text-align: justify;
+}
+
+.blog-card {
+  background: var(--card-bg-color);
+  color: var(--header-color);
+  padding: 16px;
+  margin-bottom: 32px;
+  box-shadow: var(--box-shadow);
+}
+
+.cardLog {
+  background: var(--header-color);
+  color: var(--card-bg-color);
+  padding: 3px;
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+.cardSignup,
+.cardlogin {
+  background: var(--card-color-light);
+  color: var(--header-color);
+  padding: 16px;
+  margin-bottom: 8px;
+  font-size: 20px;
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+.cardTitle {
+  font-size: 33px;
+  font-weight: 500;
+  color: var(--card-bg-color);
+  text-align: center;
+  margin-bottom: 1.32px;
+}
+
+.blogTitle {
+  font-size: 33px;
+  font-weight: 500;
+  color: var(--header-color);
+  margin-bottom: 16px;
+}
+
+.input-box {
+  padding: 8px;
+  font-size: 18px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.postedBy {
+  font-size: 20px;
+  color: var(--header-color)
+}
