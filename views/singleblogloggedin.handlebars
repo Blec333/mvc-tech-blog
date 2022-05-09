@@ -1,0 +1,15 @@
+<section>
+  <div class="blog-card add-border">
+    <div class="blogTitle">{{this.id}} - {{this.title}}</div>
+    <p>{{contents}}</p>
+    <div class="postedBy">By: {{user.username}} on {{this.datePosted}}
+    </div>
+    <form id="edit-blog">
+      <div class="align-center">
+        <button type="submit" id="update-btn" value="{{this.id}}" class="">Update</button>
+        <button type="submit" id="delete-btn" class="delete-post" value="{{this.id}}" class="">Delete</button>
+      </div>
+    </form>
+  </div>
+{{>comments}}
+</section>
