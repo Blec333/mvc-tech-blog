@@ -1,6 +1,6 @@
-// middleware to verify user loggied in before restricted route access given
+// middleware to verify user logged in
 const withAuth = (req, res, next) => {
-  if (!req.session.logged_In) {
+  if (!req.session.loggedIn) {
     res.redirect("/login");
   } else {
     next();

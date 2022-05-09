@@ -2,8 +2,28 @@
 <section>
   <div class="blog-card add-border">
     <div class="blogTitle"> {{this.id}} - {{this.title}}</div>
-    <p>{{contents}}</p>
+    <p>{{this.contents}}</p>
     <div class="postedBy">By: {{user.username}} on {{this.datePosted}}
     </div>
-  </div>
-</section>
+
+
+
+    <form class="comment-form">
+      <div>
+        <textarea name="comment-body"></textarea>
+      </div>
+
+      <div>
+        <button type="submit" id="comment-btn" class="all-btns action-button">Add Comment</button>
+      </div>
+    </form>
+
+    {{#if blog.comments}}
+    {{> comments blog.comments }}
+    {{else}}
+    <h2>No comments</h2>
+    {{/if}}
+
+    {{#if loggedIn}}
+    <script src="/js/comment.js"></script>
+    {{/if}}

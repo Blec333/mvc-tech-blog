@@ -30,9 +30,9 @@ router.get("/", withAuth, async (req, res) => {
 router.post("/", withAuth, async (req, res) => {
     try {
         const newComment = await Comment.create({
-            title: req.body.title,
-            contents: req.body.contents,
-            userId: req.session.userId,
+          commentText: req.body.commentText,
+          blogId: req.body.blogId,
+          userId: req.session.userId,
         });
         res.json(newComment);
     } catch (err) {

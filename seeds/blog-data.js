@@ -25,6 +25,18 @@ const blogdata = [
     datePosted: "01/01/1969",
     userId: 4,
   },
+  {
+    title: "blog title #5",
+    contents: "blog contents #5",
+    datePosted: "01/01/1969",
+    userId: 5,
+  },
+  {
+    title: "blog title #6",
+    contents: "blog contents #6",
+    datePosted: "01/01/1969",
+    userId: 6,
+  },
 ];
 
 const seedBlog = () => Blog.bulkCreate(blogdata);

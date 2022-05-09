@@ -1,11 +1,13 @@
 const router = require("express").Router();
-const { Blog } = require("../../models");
+const { Blog, Comment, User } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 
 router.get("/", withAuth, async (req, res) => {
   try {
-    const getBlog = await Blog.findAll(req.body);
+    const getBlog = await Blog.findAll(req.body, {
+      include: [{model: Comment, include: { model: Blog }}, { model: User }]
+    });
     res.json(getBlog);
   } catch (err) {
     res.sendStatus(500).send(err);
@@ -15,7 +17,7 @@ router.get("/", withAuth, async (req, res) => {
 router.get('/:id', withAuth, async (req, res) => {
   try {
   const getBlog = await Blog.findByPk(req.params.id, {
-    // include: [{ model: Comment }],
+    include: [{model: Comment, include: { model: Blog }}, { model: User }]
   });
   if (!getBlog) {
     res.status(404).json({ message: 'No blog found with that id!' });

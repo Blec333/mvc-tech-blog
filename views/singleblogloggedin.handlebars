@@ -11,5 +11,23 @@
       </div>
     </form>
   </div>
-{{>comments}}
-</section>
+
+<form class="comment-form">
+    <div>
+        <textarea name="comment-body"></textarea>
+    </div>
+
+    <div>
+        <button type="submit" id="comment-btn" class="all-btns action-button">Add Comment</button>
+    </div>
+</form>
+
+{{#if blog.comments}}
+{{> comments blog.comments }}
+{{else}}
+<h2>No comments</h2>
+{{/if}}
+
+{{#if loggedIn}}
+<script src="/js/comment.js"></script>
+{{/if}}
