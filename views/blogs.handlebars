@@ -1,0 +1,15 @@
+{{>headernav}}
+<section id="blogs" class="container">
+  <h1>All Blogs</h1>
+  <p>Click the titles links to view posts</p>
+  {{#each blogs}}
+    <div class="blog-card add-border">
+      <a class="blogTitle" href="/blogs/{{this.id}}">{{this.id}} - {{this.title}}</a>
+      <p>{{this.contents}}</p>
+      <div class="postedBy">By: {{user.username}} on {{this.datePosted}}</div>
+    </div>
+  {{else}}
+    <p>No blogs available</p>
+  {{/each}}
+
+</section>
