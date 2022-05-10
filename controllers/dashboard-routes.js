@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Blog, User } = require("../models");
+const { Blog, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", withAuth, (req, res) => {
@@ -18,7 +18,7 @@ router.get("/blogs", withAuth, async (req, res) => {
   try {
     const blogs = (await Blog.findAll({
       where: { "userId": req.session.userId },
-      include: [User]
+      include: [User],  include: [Comment]
     })).map((blog) =>
       blog.get({ plain: true })
     );
@@ -30,14 +30,12 @@ router.get("/blogs", withAuth, async (req, res) => {
 
 router.get("/blogs/:id", withAuth, async (req, res) => {
   try {
-    const blog = (await Blog.findByPk(req.params.id, { include: [User], })).get({ plain: true });
+    const blog = (await Blog.findByPk(req.params.id, { include: [User], include: [Comment] })).get({ plain: true });
     res.render("singleblogloggedin", { layout: "dashboard", ...blog });
   } catch (err) {
     res.sendStatus(500).send(err);
   }
 });
-
-
 
 
 
