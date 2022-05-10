@@ -29,11 +29,10 @@ router.get("/", withAuth, async (req, res) => {
 
 router.post("/", withAuth, async (req, res) => {
     try {
-        const newComment = await Comment.create({
-          commentText: req.body.commentText,
-          blogId: req.body.blogId,
-          userId: req.session.userId,
-        });
+      const newComment = await Comment.create({
+        ...req.body,
+        userId: req.session.userId,
+      });
         res.json(newComment);
     } catch (err) {
         res.sendStatus(500).send(err);

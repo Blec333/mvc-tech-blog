@@ -6,28 +6,43 @@
     </div>
     <form id="edit-blog">
       <div class="align-center">
-        <button type="submit" id="update-btn" value="{{this.id}}" class="">Update</button>
-        <button type="submit" id="delete-btn" class="delete-post" value="{{this.id}}" class="">Delete</button>
+
+        <form class="update-form">
+          <div>
+            <textarea name="blog-update-title" placeholder="Update Title Here" rows="1" cols="50"></textarea><br>
+            <textarea name="blog-update-contents" placeholder="Update Contents Here" rows="4" cols="50"></textarea>
+          </div>
+          <div>
+            <button type="submit" id="update-btn" class="all-btns action-button">Update</button>
+          </div>
+        </form><br>
+
+  <form class="delete-form">
+    <div>
+          <button type="submit" id="delete-btn" class="delete-post" class="all-btns action-button">Delete</button>
+    </div>
+  </form>
+
+
       </div>
     </form>
   </div>
 
-<form class="comment-form">
+  <form class="comment-form">
     <div>
-        <textarea name="comment-body"></textarea>
+      <textarea name="comment-body" rows="4" cols="125"></textarea><br>
     </div>
-
     <div>
-        <button type="submit" id="comment-btn" class="all-btns action-button">Add Comment</button>
+      <button type="submit" id="comment-btn" class="all-btns action-button">Add Comment</button>
     </div>
-</form>
+  </form>
 
-{{#if blog.comments}}
-{{> comments blog.comments }}
-{{else}}
-<h2>No comments</h2>
-{{/if}}
+  {{#if blog.comments}}
+  {{> comments blog.comments }}
+  {{else}}
+  <h2>No comments</h2>
+  {{/if}}
 
-{{#if loggedIn}}
-<script src="/js/comment.js"></script>
-{{/if}}
+  {{#if loggedIn}}
+  <script src="/js/comment.js"></script>
+  {{/if}}
